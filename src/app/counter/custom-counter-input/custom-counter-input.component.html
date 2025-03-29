@@ -1,0 +1,19 @@
+<div>
+   
+    <div class="my-3">
+        <h3>{{name$| async }}</h3>
+    </div>
+    <input type="text" 
+       class="form-control custom-input mt-2" 
+       name="custom-counter" 
+       id="count" 
+       placeholder="Enter a number" 
+       [(ngModel)]="value"/>
+    <button (click)="onAdd()" class="btn btn-primary mt-2">Add to the Counter</button>  <!-- Add button -->
+    <div class="text-center mt-2">
+        <button (click)="onChangeName()" >Change The name</button>
+    </div>
+    
+   
+    
+</div>

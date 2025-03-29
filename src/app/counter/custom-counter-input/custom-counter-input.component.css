@@ -1,0 +1,6 @@
+.custom-input {
+    width: 50%;   /* Set width to 50% */
+    margin: 0 auto; /* Center it horizontally */
+    display: block; /* Ensure it's treated as a block element */
+    text-align: center; /* Align text in the center */
+}
