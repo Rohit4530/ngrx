@@ -1,0 +1,25 @@
+<div class="d-flex justify-content-center align-items-center" style="height: 100vh;">
+    <div class="card shadow-lg p-4" style="width: 40rem;">
+        <div class="card-body">
+            <h2 class="text-center mb-4 text-danger">Add New Post</h2>
+            <form [formGroup]="postForm" (ngSubmit)="onAddPost()">
+                <div class="mb-3">
+                    <label class="form-label"><h5>Title</h5></label>
+                    <input type="text" class="form-control" formControlName="title"/>
+                </div>
+                <div *ngIf="!postForm.get('title')?.valid && postForm.get('title')?.touched" class="text-danger">
+                    Title is required.
+
+                </div>
+                <div class="mb-3">
+                    <label class="form-label"><h5>Description</h5></label>
+                    <textarea class="form-control" rows="3" formControlName="description"></textarea>
+                </div>
+                <div class="text-center">
+                    <button type="submit" [disabled]="postForm.invalid" class="btn btn-outline-success">Submit</button>
+
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
