@@ -3,6 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { AppState } from 'src/app/state/app.state';
 import { loginStart } from '../auth.action';
+import { setLoadingSpinner } from 'src/app/shared/shared.action';
 
 @Component({
   selector: 'app-login',
@@ -23,6 +24,7 @@ export class LoginComponent implements OnInit {
     if(this.loginForm.valid){
       const email=this.loginForm.value.email
       const password=this.loginForm.value.password
+      this.store.dispatch(setLoadingSpinner({status:true}))
       this.store.dispatch(loginStart({email,password}))
       console.log("indide valid login form");
       
