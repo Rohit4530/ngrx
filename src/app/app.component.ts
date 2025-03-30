@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { AppState } from './state/app.state';
 import { get } from 'node:http';
-import { getLoading } from './shared/shared.selector';
+import { getErrorMessage, getLoading } from './shared/shared.selector';
 import { Observable } from 'rxjs';
 
 @Component({
@@ -13,10 +13,12 @@ import { Observable } from 'rxjs';
 export class AppComponent implements OnInit{
   ngOnInit(): void {
   this.showLoading= this.store.select(getLoading)
+  this.errorMessage=this.store.select(getErrorMessage)
   }
   title = 'counter-app';
 
   showLoading!: Observable<boolean>;
+  errorMessage!: Observable<string>;
 
   constructor(private store : Store<AppState>){
 

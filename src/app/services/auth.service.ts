@@ -25,4 +25,14 @@ export class AuthService{
         
         return user
     }
+    getErrorMessage(message:string ){
+       switch(message){
+        case 'EMAIL_NOT_FOUND':
+            return 'Email not found'
+        case 'INVALID_PASSWORD':
+            return "Invalid Password"
+        default:
+            return "unknown error occured"
+       }
+    }
 }
