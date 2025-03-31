@@ -9,7 +9,7 @@ import { CounterState } from '../state/counter.state';
 })
 export class CounterButtonsComponent implements OnInit {
   
-  constructor(private store : Store<{counter :CounterState}>) { }
+constructor(private store : Store<{counter :CounterState}>) { }
 
   ngOnInit(): void {
   }
