@@ -29,6 +29,5 @@ export class SignupComponent implements OnInit {
    const password=this.signupForm.value.password
    this.store.dispatch(setLoadingSpinner({status:true}))
    this.store.dispatch(signupStart({ email ,password}))
-   
   }
 }
